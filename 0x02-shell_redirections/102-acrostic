@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -b 1 | fmt | tr -d ' '
+echo -en $(cut -c1 | tr -d '\n')'\n'
