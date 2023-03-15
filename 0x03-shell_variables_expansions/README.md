@@ -1,16 +1,16 @@
-total 56
--rw-r--r-- 1 root root 28 Mar 14 15:18 0-alias
--rwxr--r-- 1 root root 36 Mar 14 16:27 10-love_exponent_breath
--rw-r--r-- 1 root root 32 Mar 14 16:35 11-binary_to_decimal
--rw-r--r-- 1 root root 59 Mar 14 16:53 12-combinations
--rw-r--r-- 1 root root 34 Mar 14 17:03 13-print_float
--rw-r--r-- 1 root root 31 Mar 14 15:20 1-hello_you
--rw-r--r-- 1 root root 40 Mar 14 15:26 2-path
--rw-r--r-- 1 root root 62 Mar 14 16:06 3-paths
--rwxr--r-- 1 root root 21 Mar 14 16:08 4-global_variables
--rw-r--r-- 1 root root 16 Mar 14 16:11 5-local_variables
--rw-r--r-- 1 root root 26 Mar 14 16:17 6-create_local_variable
--rw-r--r-- 1 root root 33 Mar 14 16:18 7-create_global_variable
--rw-r--r-- 1 root root 41 Mar 14 16:22 8-true_knowledge
--rw-r--r-- 1 root root 37 Mar 14 16:25 9-divide_and_rule
--rw-r--r-- 1 root root  0 Mar 14 17:05 README.md
+0-alias
+100-decimal_to_hexadecimal
+101-rot13
+10-love_exponent_breath
+11-binary_to_decimal
+12-combinations
+13-print_float
+1-hello_you
+2-path
+3-paths
+4-global_variables
+5-local_variables
+6-create_local_variable
+7-create_global_variable
+8-true_knowledge
+9-divide_and_rule
