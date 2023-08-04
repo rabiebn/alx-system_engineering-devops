@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Bash script pings the IP passed as an argument 5 times.
 
 if [ -z "$1" ]
