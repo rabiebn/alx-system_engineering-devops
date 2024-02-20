@@ -60,4 +60,4 @@ if __name__ == '__main__':
         emp_tasks['TOTAL_NUMBER_OF_TASKS']
     ))
     for t in emp_tasks['TASK_TITLE']:
-        print(' \t{}'.format(t))
+        print('\t {}'.format(t))
