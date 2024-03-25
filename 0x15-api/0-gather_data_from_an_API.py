@@ -1,10 +1,16 @@
 #!/usr/bin/python3
+"""
+Module returns information about his/her TODO list progress,
+for a given employee ID.
+"""
 import requests
 
 
 url = "https://jsonplaceholder.typicode.com/"
+
+
 def fetch_emp_todo(emp_id):
-    """Doc"""
+    """fetchs employee's todo list"""
     req = requests.get(url + "todos?userId={}".format(emp_id))
     return req.json()
 
@@ -14,9 +20,9 @@ def fetch_emp_info(emp_id):
     req = requests.get(url + 'users/{}'.format(emp_id))
     return req.json()
 
+
 def done_tasks(emp_todos):
     """Returns a list of done tasks"""
-
     done = []
     for task in emp_todos:
         if task['completed']:
