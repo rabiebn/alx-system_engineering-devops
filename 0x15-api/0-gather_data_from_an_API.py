@@ -43,4 +43,4 @@ if __name__ == '__main__':
         len(emp_todos)
     ))
     for task in done:
-        print("\t{}".format(task['title']))
+        print("\t {}".format(task['title']))
