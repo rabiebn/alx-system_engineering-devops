@@ -14,6 +14,7 @@ def fetch_emp_todo(emp_id):
     req = requests.get(url + "todos?userId={}".format(emp_id))
     return req.json()
 
+
 def fetch_emp_username(emp_id):
     """Fetchs employee's user name"""
     req = requests.get(url + 'users/{}'.format(emp_id))
