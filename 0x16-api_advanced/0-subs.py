@@ -8,7 +8,7 @@ def number_of_subscribers(subreddit):
     base_url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
 
     response = requests.get(base_url,
-                            headers={"User-Agent": "whiteJhendrix"},
+                            headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"},
                             allow_redirects=False)
 
     if response.status_code == 200:
