@@ -13,5 +13,8 @@ def top_ten(subreddit):
     if response.status_code == 200:
         hot_posts = response.json()["data"]["children"]
         for i in range(0, 9):
-            print(hot_posts[i]["data"]["title"])
-    return 0
+            try:
+                print(hot_posts[i]["data"]["title"])
+            except Exception as e:
+                return
+    return
