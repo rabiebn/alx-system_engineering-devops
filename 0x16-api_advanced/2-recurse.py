@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-Module has function list_hot
+Module has function recurse
 """
 import requests
 from time import sleep
 
 
-def list_hot(subreddit, hot_list=[], after=""):
+def recurse(subreddit, hot_list=[], after=""):
     """Lists titles of all of hot posts"""
     base_url = "https://www.reddit.com/r/"
     header = {"User-Agent": "mir"}
@@ -29,7 +29,7 @@ def list_hot(subreddit, hot_list=[], after=""):
             hot_list.append(post["data"]["title"])
 
         if data["after"] is not None:
-            list_hot(subreddit, hot_list, after=data["after"])
+            recurse(subreddit, hot_list, after=data["after"])
 
         return hot_list
 
