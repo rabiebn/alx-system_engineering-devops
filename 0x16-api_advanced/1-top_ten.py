@@ -17,12 +17,11 @@ def top_ten(subreddit):
             sleep(5)
             continue
         else:
-            return
+            break
 
-    hot_posts = response.json()["data"]["children"]
-    for i in range(10):
-        try:
+    try:
+        hot_posts = response.json()["data"]["children"]
+        for i in range(10):
             print(hot_posts[i]["data"]["title"])
-        except Exception as e:
-            return
-    return
+    except Exception as e:
+        print("None")
