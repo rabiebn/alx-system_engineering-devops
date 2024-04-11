@@ -6,18 +6,15 @@ from time import sleep
 
 def number_of_subscribers(subreddit):
     """Returns the number of subscribers for a given subreddit"""
-    base_url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-
-    while True:
-        response = requests.get(base_url, allow_redirects=False)
-        if response.status_code == 200:
-            break
-        elif response.status_code == 429:
-            sleep(5)
-            continue
-        else:
-            return 0
-    try:
-        return response.json()["data"]["subscribers"]
-    except Exception as e:
-        return 0
+    url = 'https://www.reddit.com'
+    header = {
+        'Accept': 'application/json',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
+    }
+    response = requests.get('{}/r/{}/about/.json'.format(url, subreddit),
+                            headers=header,
+                            allow_redirects=False
+                            )
+    if response.status_code == 200:
+        return response.json()['data']['subscribers']
+    return 0
