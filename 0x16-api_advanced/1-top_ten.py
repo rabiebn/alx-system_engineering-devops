@@ -13,9 +13,11 @@ def top_ten(subreddit):
         response = requests.get(base_url, allow_redirects=False)
         if response.status_code == 200:
             break
-        else:
+        elif response.status_code == 429:
             sleep(5)
             continue
+        else:
+            return
 
     hot_posts = response.json()["data"]["children"]
     for i in range(10):
