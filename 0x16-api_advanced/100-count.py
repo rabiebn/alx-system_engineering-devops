@@ -25,9 +25,7 @@ def count_words(subreddit, word_list):
             if word.casefold() in article.casefold():
                 word_dict[word] += 1
 
-    word_dict = {k: v for k, v in sorted(word_dict.items(),
-                                         key=lambda item: item[1],
-                                         reverse=True)}
+    word_dict = dict(sorted(word_dict.items()))
     for key, val in word_dict.items():
         if val > 0:
             print("{}: {}".format(key, val))
