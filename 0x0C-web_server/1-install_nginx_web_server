@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Configures an Ubuntu machine
+sudo apt update -y
+sudo apt install nginx -y
+sudo mkdir -p /var/www/52.91.146.224/html
+sudo echo "Hello World!" > /var/www/52.91.146.224/html/index.html
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/52.91.146.224
+sudo sed -i -e "s/server {\n\tlisten 80 default_server;\n\tlisten [::]:80 default_server;/server {\n\tlisten 80;\n\tlisten [::]:80;/g" /etc/nginx/sites-available/52.91.146.224
+sudo sed -i -e "s/\tserver_name _;/\tserver_name 52.91.146.224;/g" /etc/nginx/sites-available/52.91.146.224
+sudo sed -i -e "s/\troot /var/www/html;/\troot /var/www/52.91.146.224;/g" /etc/nginx/sites-available/52.91.146.224
+sudo sed -i -e "s/\tindex index.html index.htm index.nginx-debian.html;/\tindex index.html/g" /etc/nginx/sites-available/52.91.146.224
+sudo ln -s /etc/nginx/sites-available/52.91.146.224 /etc/nginx/sites-enabled
+sudo service nginx restart
