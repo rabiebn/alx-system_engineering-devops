@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 # configure redirection route
-sudo sed -i -e "s/=404;\n\t}\n/=404;\n\t}\n\n\tlocation /redirect_me/ {\n\t\treturn 301 https://github.com/rabiebn/;\n\t}/g" /etc/nginx/sites-enabled/afrolang.tech
+sudo apt -y upgrade
+sudo apt -y update
+sudo apt -y install nginx
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sudo sed -i "53i/\n\t}\n\n\tlocation /redirect_me/ {\n\t\treturn 301 https://github.com/rabiebn/;\n\t}" /etc/nginx/sites-available/default
+sudo service nginx restart
