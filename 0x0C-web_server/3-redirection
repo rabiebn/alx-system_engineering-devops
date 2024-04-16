@@ -4,5 +4,5 @@ sudo apt -y upgrade
 sudo apt -y update
 sudo apt -y install nginx
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
-sudo sed -i "54i\n\t}\n\n\tlocation /redirect_me/ {\n\t\treturn 301 https://github.com/rabiebn/;\n\t}" /etc/nginx/sites-available/default
+sudo sed -i "53s\n\tlocation /redirect_me {\n\t\treturn 301 https://github.com/rabiebn/;\n\t}\n" /etc/nginx/sites-available/default
 sudo service nginx restart
