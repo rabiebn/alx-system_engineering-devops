@@ -2,6 +2,5 @@
 # Configures an Ubuntu machine
 sudo apt update -y
 sudo apt install nginx -y
-sudo mkdir -p /var/www/52.91.146.224/html
-sudo sh -c 'echo "Hello World!" > /var/www/52.91.146.224/html/index.html'
+sudo sh -c 'echo "Hello World!" > /var/www/html/index.nginx-debian.html'
 sudo service nginx restart
