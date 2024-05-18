@@ -4,5 +4,5 @@ master_pid=$(pgrep -f "gunicorn.*--workers")
 # Gracefully restart Gunicorn
 for slave in $master_pid
 do 
-	kill -s TERM $slave
+	kill -s TERM "$slave"
 done
